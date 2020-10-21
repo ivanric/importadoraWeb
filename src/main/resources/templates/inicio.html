@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Consaik">
+
+    <title>INFINITO</title>
+
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+
+    <link href="../css/w3.css" rel="stylesheet">
+    
+	<!--     date-picker -->
+    <!-- <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet"> -->
+    
+    <!-- Bootstrap validation CSS -->
+	<link rel="stylesheet" href="../bower_components/form.validation/dist/css/formValidation.css"/>
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+
+	
+    <!-- MetisMenu CSS -->
+    <link href="../css/metisMenu.min.css" rel="stylesheet">
+	
+	<!-- DataTables CSS -->
+	<link rel="stylesheet" href="../bower_components/datatables.net-bs/css/dataTables.bootstrap.css"/>
+    <!-- DataTables Responsive CSS -->
+    <link rel="stylesheet" href="../bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.css"/>
+   
+	<link rel="stylesheet" href="../bower_components/bootstrap-sweetalert/dist/sweetalert.css"/>
+    <link rel="stylesheet" href="../bower_components/bootstrap-fileinput/css/fileinput.css"/>
+    <link rel="stylesheet" href="../bower_components/bootstrap-duallistbox/dist/bootstrap-duallistbox.css"/>
+
+
+
+	<link rel="stylesheet" href="../css/tema/inicio.css" ></link>
+	<style>
+        *{
+            font-size: 12px !important;
+        }
+		.form-control:focus {
+            /* border-color: #292929; */
+            border-color: #5e5e5e;
+            box-shadow: inset 0 1px 1px rgba(158, 158, 158, 0.075), 0 0 8px rgba(83, 83, 83, 0.6);
+            /* box-shadow:none; */
+        }
+
+    </style>
+	
+</head>
+
+<body>
+	<a href="#" class="flecha_menu showMenu" id="showMenu"><i class="icono fa fa-bars"></i></a>
+	<div class="menu">
+		<!-- <h3 class="menu_titulo">MENU</h3> -->
+		<div class="contenido_menu">
+			<ul class="lista-menu" id="side-menu">
+				<li class="">
+					<a href="#" id="mod" data-id="" class="title_menu"><i class=""></i>
+					<span>Parametros</span>
+					<!--<i class="icono derecha fa fa-chevron-down" aria-hidden="true"></i>-->
+					</a>
+				<ul class="lista-procesos list-procesos" data-id="" >
+					<li class="sub-proceso">
+						<a href="#" data-href="/Paises/gestion" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Paises</a>
+					</li>
+					<li class="sub-proceso">
+						<a href="#" data-href="" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Departamentos</a>
+					</li>
+					<li class="sub-proceso">
+						<a href="#" data-href="" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Provincias</a>
+					</li>
+				</ul>
+				</li>
+			</ul>	
+		</div>	
+	</div>
+	<div class="contenedor">
+		<header>
+			<div class="logo">
+				<img src="../img/infinito.jpeg" width="150" alt="">
+				<a href="#">INFINITO</a>
+			</div>
+			<!-- <span class="sp-btn">
+				<a href="#" class="btn-menu showMenu" id="showMenu"><i class="icono fa fa-bars"></i></a>
+			</span> -->
+			<nav>
+				<ul class="menu_navegacion">
+					<li>
+						<!-- <button class="avatar btn btn-danger" style="border-radius: 50%;" onclick="window.open('/helpChm/AYUDA_SISTEMA-web/index.html')"> <span class="fa fa-question-circle fa-2x"></span></button> -->
+						<!-- <button class="avatar btn btn-danger" style="border-radius: 50%;" >  -->
+							<span class="fa fa-question-circle fa-4x" onclick="AYUDACHM()" style="color: blue;font-size: 30px !important;"></span>
+						</button>
+					</li>
+					<li>
+						<select class="tipe form-control" name="roles" id="select-Roles" onchange="GetMenus(this)">	
+						</select>
+					</li>
+					<li>
+						<p style="color: #3fb50f;">Conectado: <i class="fa fa-circle conectado" ></i>&nbsp; 
+						
+					</li>
+						<strong ><h5 class="conectado_user"></h5></strong></p>
+					<li>
+					</li>
+					<li>
+						<img class="avatar" id="avatar" src="../img/user.png" th:src="@{/img/user.png}" alt="logo">
+					</li>
+					<li>
+					<!-- 	<a href="#" class="salir">
+							<i class="fa fa-sign-out btn-logout" id="btn-desc"></i>
+						</a>
+ -->
+						<div class="dropdown">
+						  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    <!-- Dropdown -->
+						    <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="left: -120px !important">
+						    <li><a href="#" onclick="changePassword()">USUARIO
+						    		<i class="fa fa-user"></i>
+						    	</a>
+						    </li>
+						     <!-- <li><a href="#"></a></li> -->
+						    <!-- <li role="separator" class="divider"></li> -->
+						    <li>
+						    	<a href="#" class="salir text-center" id="btn-desc">DESCONECAR
+									<i class="fa fa-sign-out btn-logout" ></i>
+								</a>>
+							</li>
+						  </ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+ 
+		<section class="main">	
+			<div id="contenedor-gestion" style="height: 37.4em;">
+				<h4>Te damos la bienvenida..</h4>
+			</div>
+		</section>
+		<footer>
+			<div class="social">
+				<a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+				<a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+			</div>
+		</footer>
+	</div>
+	<div id="cont-modales" class="cont-modales"></div>
+
+	<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="reportes" aria-hidden="true">
+	  <div class="modal-dialog modal-lg" style="width: 90%">
+	    <div class="modal-content cont-reportes" >
+	      <iframe id="frameReportes" width="100%" height="600px"></iframe>
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- jQuery -->
+	<script type="" src="../bower_components/jquery/dist/jquery.js" ></script>
+
+	<script type="" src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- <script type="" src="../bower_components/Waves/dist/waves.js"></script> -->
+    <!-- <script type="" src="../bower_components/jquery-form/dist/jquery.form.min.js" ></script> -->
+    <script type="" src="../bower_components/form.validation/dist/js/formValidation.js" ></script>
+    <script type="" src="../bower_components/form.validation/dist/js/framework/bootstrap.js" ></script>
+	<script type="" src="../bower_components/form.validation/dist/js/language/es_ES.js"></script>
+	
+    <script type="" src="../js/datatables.js"></script>
+    <!-- <script type="" src="../bower_components/datatables.net/js/jquery.dataTables.js"></script> -->
+    <script type="" src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.js"></script>
+    <script type="" src="../bower_components/datatables.net-responsive/js/dataTables.responsive.js"></script>
+    <script type="" src="../bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <!-- <script type="" src="../bower_components/chosen/chosen.jquery.min.js"></script> -->
+    <!-- <script type="" src="../bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script> -->
+    <!-- <script type="" src="../bower_components/bootstrap-select/dist/js/i18n/defaults-es_ES.js"></script> -->
+    <script type="" src="../bower_components/bootstrap-sweetalert/dist/sweetalert.js"></script>
+    <!-- <script src="../bower_components/growl/javascripts/jquery.growl.js"></script> -->
+    <!-- <script src="../bower_components/bootstrap-growl/jquery.bootstrap-growl.min.js"></script> -->
+    <!-- <script type="" src="../bower_components/jquery-load-json/dist/jquery.loadJSON.min.js"></script>  -->
+
+    <script type="" src="../bower_components/bootstrap-fileinput/js/fileinput.js"></script> 
+	<script type="" src="../bower_components/bootstrap-fileinput/js/locales/es.js" ></script> 
+	<script type="" src="../bower_components/bootstrap-duallistbox/dist/jquery.bootstrap-duallistbox.js"></script> 
+
+
+
+   <script type="text/javascript">
+
+    
+
+		$('#btn-desc').on('click',function(){
+            swal({   
+                title: "Esta seguro de salir del Sistema?",   
+                text: "Se desconectara del Sistema para redirigirse a la pantalla de login!",   
+                type: "warning",   
+                showCancelButton: true,   
+                confirmButtonColor: "#DD6B55",   
+                confirmButtonText: "Si, Salir!",
+                cancelButtonText: "No, Cancelar!",    
+                closeOnConfirm: false//q no se cierre al hacer click en aceptar, q haga otro evento 
+				// closeOnCancel: false 
+
+            }, function(isConfirm){  
+				if(isConfirm){
+                    if ("tokenUser" in sessionStorage) {
+                        //  alert("yes");
+                         sessionStorage.removeItem("token");
+                    }
+                    // else {
+                        // alert("no");
+                        // window.location.href='../';
+                    // } 
+             	   window.location.href="/desconectar"
+				} 
+            });
+
+		})
+
+	
+    </script>
+	<script>
+		$(function() {
+			var meses = new Array("01", "02", "03","04", "05", "06", "07","08", "09", "10","11", "12");
+			var f = new Date();
+			var fecha= f.getFullYear()+ "-" + meses[f.getMonth()] + "-" +f.getDate();
+			$("#date").html(fecha);
+
+		})
+
+		function mueveReloj(){
+		    momentoActual = new Date()
+		    hora = momentoActual.getHours()
+		    minuto = momentoActual.getMinutes()
+		    segundo = momentoActual.getSeconds()
+
+		    horaImprimible = hora + ":" + minuto + ":" + segundo
+			$("#time").html(horaImprimible);
+		    setTimeout("mueveReloj()",1000)
+		} 
+	</script>
+	<script>
+		$('.showMenu').on('click',function(e){
+			e.preventDefault();
+			if ($('.menu').hasClass('menu_mostrar')) {
+				$('.menu').removeClass('menu_mostrar')
+				$('.flecha_menu').removeAttr('style')
+			} else {
+				$('.menu').addClass('menu_mostrar')
+				$('.flecha_menu').css("background","blue")
+			}
+		})
+
+		function getGestion(link_gest){	//<a>
+			
+			var enlace=$(link_gest).data('href');
+			$.post(enlace,function(resp){
+				$('#contenedor-gestion').html(resp);
+			})
+
+		}
+
+	</script>
+	
+	
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+bower install bootstrap#3.3.4 --save //esto debe ser esa version ya que el formValidation es una version compratible sola para esta version

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>Index</title>
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bower_components/form.validation/dist/css/formValidation.css"></link>
+    
+     <link rel="stylesheet" href="../js/tema/material-design-iconic-font/dist/css/material-design-iconic-font.css"></link>  
+
+  
+<!-- 	<meta charset="utf-8">	 -->
+    <style>
+        .navbar-mod{
+            background-color:#f8f9fa!important;
+            /* margin-top: 10px; */
+            padding: 20px;
+        }
+        .navbar-toggle .icon-bar {
+            background: #337ab7 !important;
+        }
+
+        .form-login{
+            padding: 20px;
+            width: 90%;
+        }
+        .form-login input{
+            border: 1px solid white!important;
+            border-radius: 15px;
+            
+        }
+        .form-login button[type="submit"]{
+            /* border: 1px solid white!important; */
+            /* border-radius: 15px; */
+            /* background: yellowgreen; */
+            border: none;
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        
+        .form-control:focus {
+            border-color: #292929;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(83, 83, 83, 0.6);
+        }
+        .formulario-center-registration{
+            border-radius: 5px;
+            background-color:#f2f3f5 !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: small;
+            margin-left: 30px;
+            margin-top:  30px;
+            margin-right: 30px;
+        
+        }
+        .formulario-center-registration form{
+            width: 100%;
+        
+        }
+        .formulario-center{
+            border-radius: 5px;
+            background-color:#f2f3f5 !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: small;
+            margin-left: 30px;
+            margin-bottom:  30px;
+            margin-right: 30px;
+        }
+        .img-user{
+            padding-top: 10px;
+            padding-bottom: 20px;
+            text-align: center;
+            width: 100%;
+            background: transparent;
+        }
+        .img-user img{
+            border-radius: 50%;
+            width: 120px;
+            
+        }
+        #resetear{
+            background-color: transparent;
+            border: none !important;
+        }
+        #resetear:hover{
+            color: teal;
+            border: none !important;
+        }
+        .mensaje{
+            font-size: 10px;
+        /* 	background: red; */
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+	
+    <div class="container">
+        <nav class="navbar  navbar-mod">
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">INFINITO</a>
+              </div>
+      
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Inicio</a></li>
+                  <li><a href="#">Servicios</a></li>
+                  <li><a href="#">Ubicacion</a></li>
+                </ul>
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav>
+
+       
+
+
+        <div class="row" style="padding-top: 20px;">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="formulario-center-registration">
+                    <form th:action="@{/registration}" method="get">
+                        <button class="btn btn-md btn-warning btn-block" type="Submit">Registrarte</button>
+                    </form>	
+                </div>
+            	<div class="formulario-center">
+              
+                    <form id="formulario" name="formulario" action="#" class="form-login"
+                    data-fv-framework="bootstrap"
+                    data-fv-excluded="disabled"
+                    data-fv-icon-valid="glyphicon glyphicon-ok"
+                      data-fv-icon-invalid="glyphicon glyphicon-remove"
+                      data-fv-icon-validating="glyphicon glyphicon-refresh">
+                                <button type="button" class="waves-effect" id="resetear" name="resetear"> <i class="zmdi zmdi-refresh zmdi-hc-2x"></i></button>            
+                                <div class="img-user">
+                                    <img src="../img/tema/user.png" width="" class="">
+                                </div>
+
+                                <div class="form-group">
+                                    <!-- <div class="input-group m-b-20"> -->
+                                        <!-- <span class="input-group-addon"><i class="zmdi zmdi-face"></i></span> -->
+                                        <!-- <div class="fg-line"> -->
+                                            <input type="text" class="form-control" id="login-username" placeholder="Usuario.." name="username" value=""  autocomplete="off"  data-fv-notempty="true"></input>
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+                                </div>
+                                
+                    
+                                <div class="form-group">    
+                                    <!-- <div class="input-group m-b-20"> -->
+                                        <!-- <span class="input-group-addon"><i class="zmdi zmdi-lock"></i></span> -->
+                                        <!-- <div class="fg-line"> -->
+                                            <input type="password" class="form-control" id="login-password"  placeholder="Contrasenia" name="password" value="" data-fv-notempty="true"></input>
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+                                </div>
+                                <div id="mensaje" class="mensaje"></div>
+                                <div class="form-group">
+                                    <div class="col-sm-12 text-center">
+                                        <button type="submit" class="btn btn-primary">Ingresar</button>
+
+                                    </div>
+                                </div>
+            
+                            </form>
+                </div>
+
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+
+    <script type="" src="../bower_components/form.validation/dist/js/formValidation.js"></script>
+    <script type="" src="../bower_components/form.validation/dist/js/framework/bootstrap.js"></script>
+    <script type="" src="../bower_components/form.validation/dist/js/language/es_ES.js"></script>
+
+    
+	<script type="text/javascript">
+
+        var urlServer='http://localhost:8080';
+
+
+        $(document).ready(function(){
+            
+        
+            $('#formulario').formValidation(
+                    {locale: 'es_ES'}).on('success.form.fv', function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url:'/validar',
+                    success:function(respuesta){
+                        console.log("resp servidor",respuesta)
+                        if (respuesta.status) {
+                        	location.href = "/inicio"
+						}
+                    },
+                    error:function(err){
+                        alert(err)
+                    }
+                })
+
+            });
+            
+        });
+        
+        $('#resetear').on('click',function(){
+            $('#formulario').data('formValidation').resetForm(true);
+            $('#mensaje').html('');
+        })
+        
+
+    </script>
+    
+    
+</body>
+</html>
