@@ -9,12 +9,12 @@
     <meta name="author" content="">
 	
     <title>Index</title>
-    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
 
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../bower_components/form.validation/dist/css/formValidation.css"></link>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/form.validation/dist/css/formValidation.css"></link>
     
-     <link rel="stylesheet" href="../js/tema/material-design-iconic-font/dist/css/material-design-iconic-font.css"></link>  
+     <link rel="stylesheet" href="js/tema/material-design-iconic-font/dist/css/material-design-iconic-font.css"></link>  
 
   
 <!-- 	<meta charset="utf-8">	 -->
@@ -155,7 +155,7 @@
                       data-fv-icon-validating="glyphicon glyphicon-refresh">
                                 <button type="button" class="waves-effect" id="resetear" name="resetear"> <i class="zmdi zmdi-refresh zmdi-hc-2x"></i></button>            
                                 <div class="img-user">
-                                    <img src="../img/tema/user.png" width="" class="">
+                                    <img src="img/tema/user.png" width="" class="">
                                 </div>
 
                                 <div class="form-group">
@@ -194,13 +194,13 @@
     </div>
 
     <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
 
-    <script type="" src="../bower_components/form.validation/dist/js/formValidation.js"></script>
-    <script type="" src="../bower_components/form.validation/dist/js/framework/bootstrap.js"></script>
-    <script type="" src="../bower_components/form.validation/dist/js/language/es_ES.js"></script>
+    <script type="" src="bower_components/form.validation/dist/js/formValidation.js"></script>
+    <script type="" src="bower_components/form.validation/dist/js/framework/bootstrap.js"></script>
+    <script type="" src="bower_components/form.validation/dist/js/language/es_ES.js"></script>
 
     
 	<script type="text/javascript">
@@ -216,11 +216,11 @@
                 e.preventDefault();
 
                 $.ajax({
-                    url:'/validar',
+                    url:'validar',
                     success:function(respuesta){
                         console.log("resp servidor",respuesta)
                         if (respuesta.status) {
-                        	location.href = "/inicio"
+                        	location.href = "inicio"
 						}
                     },
                     error:function(err){

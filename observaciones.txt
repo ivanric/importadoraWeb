@@ -1,0 +1,7 @@
+--------------------COMPRAS---------------
+
+al salir del modal de agregar y volver al entrar el boton de agregar items se multiplica por la cantidad anterior al cerrar el modal
+
+SOLO MUESTRA COLOR ROJO CUANDO ESTA REPETIDO (DEJA GUARDAR REPETIDO chasis-motor)
+
+VALIDA EN ROJO DESDE sU POSICIION PARA ARRIBA, PARA ABAJO NO VALIDA (chasis motor)

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.infinito.importadoraWeb.model.Usuemp;
+
 
 
 
@@ -25,12 +27,17 @@ public class Controlador {
 	}
 	
 	@RequestMapping(value="/inicio", method = RequestMethod.GET)
-	public String inicio(HttpServletRequest request){
+	public String inicio(HttpServletRequest request,HttpSession session){
+		session=request.getSession(true);
+		Usuemp usu=new Usuemp(1,1,1,1);
+		session.setAttribute("usu", usu);
 		return "inicio";
 	}
 	
 	@RequestMapping({"/desconectar"})
 	public String desc(Model m,HttpServletRequest req,HttpServletResponse res){
+		HttpSession session = req.getSession();
+		session.invalidate();
 		return "redirect:index";
 	}
 	

@@ -17,6 +17,10 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		
+		<start-class>
+			com.infinito.importadoraWeb.ImportadoraWebApplication
+		</start-class>
 	</properties>
 
 	<dependencies>

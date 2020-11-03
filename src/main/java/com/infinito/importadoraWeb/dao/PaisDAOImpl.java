@@ -11,6 +11,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.infinito.importadoraWeb.model.Pais;
+
+
 @Repository
 public class PaisDAOImpl implements IPaisDAO{
 	@Autowired
@@ -37,6 +39,66 @@ public class PaisDAOImpl implements IPaisDAO{
 			System.out.println("error al obtener:"+e.toString());
 			return null;
 		}
+	}
+
+
+	@Override
+	public boolean adicionar(Pais pais) {
+		try {
+			String sql;
+			int id=generarCodigo();
+			sql="insert into pais(idpais,nombre,estado) values(?,?,1);";
+			db.update(sql,id,pais.getNombre().toUpperCase());
+			return true;
+		} catch (Exception e) {
+			System.out.println("error tipo="+e.toString());
+			return false;
+		}
+	}
+	public int generarCodigo(){
+		String sql="select COALESCE(max(idpais),0)+1 as idpais from pais";
+		return db.queryForObject(sql, Integer.class);
+	}
+
+
+	@Override
+	public boolean modificar(Pais pais) {
+		try {
+			String sql;
+			sql="update pais set nombre=? where idpais=?;";
+			db.update(sql,pais.getNombre(),pais.getIdpais());
+			return true;
+		} catch (Exception e) {
+			System.out.println("error al modificar categoria="+e.toString());
+			return false;
+		}
+	}
+
+
+	@Override
+	public boolean eliminar(int idpais,int estado) {
+		try {
+			System.out.println("qui");
+			db.update("update pais set estado=? where idpais=?",estado,idpais);
+			return true;
+		} catch (Exception e) {
+			System.out.println("error al dar estado al tipo="+e.toString());
+			return false;
+		}
+	}
+
+
+	@Override
+	public Pais obtenernombre(int id) {
+		
+		return null;
+	}
+
+
+	@Override
+	public List<Map<String, Object>> lista() {
+		sql="select* from pais";
+		return db.queryForList(sql);
 	}
 
 

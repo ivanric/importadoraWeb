@@ -10,33 +10,35 @@
 
     <title>INFINITO</title>
 
-	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 
-    <link href="../css/w3.css" rel="stylesheet">
+    <link href="css/w3.css" rel="stylesheet">
     
 	<!--     date-picker -->
-    <!-- <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet"> -->
+    <!-- <link href="css/bootstrap-datetimepicker.css" rel="stylesheet"> -->
     
     <!-- Bootstrap validation CSS -->
-	<link rel="stylesheet" href="../bower_components/form.validation/dist/css/formValidation.css"/>
-    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+	<link rel="stylesheet" href="bower_components/form.validation/dist/css/formValidation.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
 
 	
     <!-- MetisMenu CSS -->
-    <link href="../css/metisMenu.min.css" rel="stylesheet">
+    <link href="css/metisMenu.min.css" rel="stylesheet">
 	
 	<!-- DataTables CSS -->
-	<link rel="stylesheet" href="../bower_components/datatables.net-bs/css/dataTables.bootstrap.css"/>
+	<link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.css"/>
     <!-- DataTables Responsive CSS -->
-    <link rel="stylesheet" href="../bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.css"/>
    
-	<link rel="stylesheet" href="../bower_components/bootstrap-sweetalert/dist/sweetalert.css"/>
-    <link rel="stylesheet" href="../bower_components/bootstrap-fileinput/css/fileinput.css"/>
-    <link rel="stylesheet" href="../bower_components/bootstrap-duallistbox/dist/bootstrap-duallistbox.css"/>
+	<link rel="stylesheet" href="bower_components/bootstrap-sweetalert/dist/sweetalert.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap-fileinput/css/fileinput.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap-duallistbox/dist/bootstrap-duallistbox.css"/>
+	<link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css"/>
+	<link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.css"/>
+	
 
 
-
-	<link rel="stylesheet" href="../css/tema/inicio.css" ></link>
+	<link rel="stylesheet" href="css/tema/inicio.css" ></link>
 	<style>
         *{
             font-size: 12px !important;
@@ -65,14 +67,53 @@
 					</a>
 				<ul class="lista-procesos list-procesos" data-id="" >
 					<li class="sub-proceso">
-						<a href="#" data-href="/Paises/gestion" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Paises</a>
+						<a href="#" data-href="Paises/gestion" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Paises</a>
 					</li>
 					<li class="sub-proceso">
-						<a href="#" data-href="" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Departamentos</a>
+						<a href="#" data-href="Dpto/gestion" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Departamentos</a>
 					</li>
 					<li class="sub-proceso">
-						<a href="#" data-href="" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Provincias</a>
+						<a href="#" data-href="Prov/gestion" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Provincias</a>
 					</li>
+				</ul>
+				</li>
+
+				<li class="">
+					<a href="#" id="mod" data-id="" class="title_menu"><i class=""></i>
+					<span>Items</span>
+					<!--<i class="icono derecha fa fa-chevron-down" aria-hidden="true"></i>-->
+					</a>
+				<ul class="lista-procesos list-procesos" data-id="" >
+					<li class="sub-proceso">
+						<a href="#" data-href="Items/gestion" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Items</a>
+					</li>
+					<li class="sub-proceso">
+						<a href="#" data-href="Items/colores/gestion" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Colores</a>
+					</li>
+					<li class="sub-proceso">
+						<a href="#" data-href="Items/categorias/gestion" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Categorias</a>
+					</li>
+					<li class="sub-proceso">
+						<a href="#" data-href="Items/lineas/gestion" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Lineas</a>
+					</li>
+					<li class="sub-proceso">
+						<a href="#" data-href="Items/marcas/gestion" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Marcas</a>
+					</li>
+					<li class="sub-proceso">
+						<a href="#" data-href="Items/modelos/gestion" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Modelos</a>
+					</li>
+				</ul>
+				</li>
+				<li class="">
+					<a href="#" id="mod" data-id="" class="title_menu"><i class=""></i>
+					<span>Compras</span>
+					<!--<i class="icono derecha fa fa-chevron-down" aria-hidden="true"></i>-->
+					</a>
+				<ul class="lista-procesos list-procesos" data-id="" >
+					<li class="sub-proceso">
+						<a href="#" data-href="Compras/compras" data-id="" accesskey="" data-idrol="" class="enlace-proc enl-gestion" onclick=(getGestion(this))>Compras</a>
+					</li>
+					
 				</ul>
 				</li>
 			</ul>	
@@ -81,7 +122,7 @@
 	<div class="contenedor">
 		<header>
 			<div class="logo">
-				<img src="../img/infinito.jpeg" width="150" alt="">
+				<img src="img/infinito.jpeg" width="150" alt="">
 				<a href="#">INFINITO</a>
 			</div>
 			<!-- <span class="sp-btn">
@@ -107,7 +148,7 @@
 					<li>
 					</li>
 					<li>
-						<img class="avatar" id="avatar" src="../img/user.png" th:src="@{/img/user.png}" alt="logo">
+						<img class="avatar" id="avatar" src="img/user.png" th:src="@{/img/user.png}" alt="logo">
 					</li>
 					<li>
 					<!-- 	<a href="#" class="salir">
@@ -162,31 +203,34 @@
 
 
 	<!-- jQuery -->
-	<script type="" src="../bower_components/jquery/dist/jquery.js" ></script>
+	<script type="" src="bower_components/jquery/dist/jquery.js" ></script>
 
-	<script type="" src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <!-- <script type="" src="../bower_components/Waves/dist/waves.js"></script> -->
-    <!-- <script type="" src="../bower_components/jquery-form/dist/jquery.form.min.js" ></script> -->
-    <script type="" src="../bower_components/form.validation/dist/js/formValidation.js" ></script>
-    <script type="" src="../bower_components/form.validation/dist/js/framework/bootstrap.js" ></script>
-	<script type="" src="../bower_components/form.validation/dist/js/language/es_ES.js"></script>
+	<script type="" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- <script type="" src="bower_components/Waves/dist/waves.js"></script> -->
+    <!-- <script type="" src="bower_components/jquery-form/dist/jquery.form.min.js" ></script> -->
+    <script type="" src="bower_components/form.validation/dist/js/formValidation.js" ></script>
+    <script type="" src="bower_components/form.validation/dist/js/framework/bootstrap.js" ></script>
+	<script type="" src="bower_components/form.validation/dist/js/language/es_ES.js"></script>
 	
-    <script type="" src="../js/datatables.js"></script>
-    <!-- <script type="" src="../bower_components/datatables.net/js/jquery.dataTables.js"></script> -->
-    <script type="" src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.js"></script>
-    <script type="" src="../bower_components/datatables.net-responsive/js/dataTables.responsive.js"></script>
-    <script type="" src="../bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-    <!-- <script type="" src="../bower_components/chosen/chosen.jquery.min.js"></script> -->
-    <!-- <script type="" src="../bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script> -->
-    <!-- <script type="" src="../bower_components/bootstrap-select/dist/js/i18n/defaults-es_ES.js"></script> -->
-    <script type="" src="../bower_components/bootstrap-sweetalert/dist/sweetalert.js"></script>
-    <!-- <script src="../bower_components/growl/javascripts/jquery.growl.js"></script> -->
-    <!-- <script src="../bower_components/bootstrap-growl/jquery.bootstrap-growl.min.js"></script> -->
-    <!-- <script type="" src="../bower_components/jquery-load-json/dist/jquery.loadJSON.min.js"></script>  -->
+    <script type="" src="js/datatables.js"></script>
+    <!-- <script type="" src="bower_components/datatables.net/js/jquery.dataTables.js"></script> -->
+    <script type="" src="bower_components/datatables.net-bs/js/dataTables.bootstrap.js"></script>
+    <script type="" src="bower_components/datatables.net-responsive/js/dataTables.responsive.js"></script>
+    <script type="" src="bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <!-- <script type="" src="bower_components/chosen/chosen.jquery.min.js"></script> -->
+    <!-- <script type="" src="bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script> -->
+    <!-- <script type="" src="bower_components/bootstrap-select/dist/js/i18n/defaults-es_ES.js"></script> -->
+    <script type="" src="bower_components/bootstrap-sweetalert/dist/sweetalert.js"></script>
+    <!-- <script src="bower_components/growl/javascripts/jquery.growl.js"></script> -->
+    <!-- <script src="bower_components/bootstrap-growl/jquery.bootstrap-growl.min.js"></script> -->
+    <script type="" src="bower_components/jquery-load-json/dist/jquery.loadJSON.min.js"></script> 
 
-    <script type="" src="../bower_components/bootstrap-fileinput/js/fileinput.js"></script> 
-	<script type="" src="../bower_components/bootstrap-fileinput/js/locales/es.js" ></script> 
-	<script type="" src="../bower_components/bootstrap-duallistbox/dist/jquery.bootstrap-duallistbox.js"></script> 
+    <script type="" src="bower_components/bootstrap-fileinput/js/fileinput.js"></script> 
+	<script type="" src="bower_components/bootstrap-fileinput/js/locales/es.js" ></script> 
+	<script type="" src="bower_components/bootstrap-duallistbox/dist/jquery.bootstrap-duallistbox.js"></script> 
+	<script type="" src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script> 
+	<script type="" src="bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+
 
 
 
@@ -214,9 +258,9 @@
                     }
                     // else {
                         // alert("no");
-                        // window.location.href='../';
+                        // window.location.href='';
                     // } 
-             	   window.location.href="/desconectar"
+             	   window.location.href="desconectar"
 				} 
             });
 

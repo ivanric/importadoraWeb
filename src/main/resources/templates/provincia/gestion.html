@@ -1,0 +1,331 @@
+<form name="formulario" role="form" id="formulario" method="post" action="RestProv/guardar"
+data-fv-excluded="disabled"
+data-fv-icon-valid="glyphicon glyphicon-ok"
+data-fv-icon-invalid="glyphicon glyphicon-remove"
+data-fv-icon-validating="glyphicon glyphicon-refresh">                       
+
+<div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nueva Provincia</h4>
+      </div>
+      <div class="modal-body">
+        <!-- Text input-->
+        
+        <div class="form-group">
+         <label>Pais</label>
+         <select class="form-control" id="idpaises" name="idpais" required="required">
+
+         </select>
+         
+       </div>
+
+       <div class="form-group">
+         <label>Departamento</label>
+         <select class="form-control" id="iddep" name="iddep" required="required">
+
+         </select>
+         
+       </div>
+       <div class="form-group">
+         <label>Nombre</label> <input id="nompais" name="nombre" type="text"
+         placeholder="ingrese provincia" class="form-control input-md"
+         data-fv-notempty="true" >
+       </div>
+
+     </div>
+     <div class="modal-footer">
+      <button type="submit" id="btnAdicionarConfirmacion" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-disk"></i> Guardar</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="glyphicon glyphicon-remove-sign"></i> Cancelar</button>
+    </div>
+  </div>
+</div>
+
+</div>
+</form>
+<form name="formularioModificar" role="form" id="formularioModificar" method="post" action="RestProv/actualizar"
+data-fv-excluded="disabled"
+data-fv-icon-valid="glyphicon glyphicon-ok"
+data-fv-icon-invalid="glyphicon glyphicon-remove"
+data-fv-icon-validating="glyphicon glyphicon-refresh">
+<div class="modal fade" id="modalModificar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog"role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modificar Provincia</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" name="idprov" id="idprov" />
+        <!-- Text input-->
+        <div class="form-group">
+         <label>Pais</label>
+         <select class="form-control" id="idpaises1" name="idpais" required="required">
+
+         </select>
+         
+       </div>
+
+       <div class="form-group">
+         <label>Departamento</label>
+         <select class="form-control" id="iddep1" name="iddep" required="required">
+
+         </select>
+         
+       </div>
+
+       <div class="form-group">
+         <label>Nombre</label> <input id="nomdep1" name="nombre" type="text"
+         placeholder="nombre" class="form-control input-md"
+         data-fv-notempty="true">
+       </div>
+     </div>
+     <div class="modal-footer">
+      <button type="submit" id="btnModificarConfirmacion" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-disk"></i> Guardar</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="glyphicon glyphicon-remove-sign"></i> Cancelar</button>
+    </div>
+  </div>
+</div>
+
+</div>
+</form>
+<div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <form name="formularioEliminar" role="form" id="formularioEliminar" method="post" action="RestProv/eliminar"
+  data-fv-excluded="disabled"
+  data-fv-icon-valid="glyphicon glyphicon-ok"
+  data-fv-icon-invalid="glyphicon glyphicon-remove"
+  data-fv-icon-validating="glyphicon glyphicon-refresh">
+  <div class="modal-dialog " style="width: 40%" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Eliminar Provincia</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="idprov3" name="idprov" />	
+        <div class="row">
+         <div class="col-md-9"><h3>¿Esta seguro de Eliminar? <b id="tipoLabel"></b></h3></div>
+       </div>		
+     </div>
+     <div class="modal-footer">
+      <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i> Aceptar</button>
+      <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="glyphicon glyphicon-remove-sign"></i> Cancelar</button>
+    </div>
+  </div>
+</div>
+</form>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+   <div class="panel panel-default">
+
+    <div class="panel-body">
+     <div class="dataTable_wrapper">
+      <table id="example" class="w3-table-all w3-tiny w3-table-hoverable w3-card-4" style="width: 100% !important">
+        <thead>
+          <tr>
+           <th>Nombre</th>
+           <th>Departamento</th>
+           <th>Pais</th>
+           <th width="200px"></th>
+         </tr>
+       </thead>
+       <tbody >
+
+       </tbody>
+     </table>  
+   </div>
+ </div>
+</div>
+</div>
+</div> 
+<script type="text/javascript">
+  $(document).ready(function() {
+   var btnGroup='';
+   $('#example').dataTable( {
+    "oLanguage": {
+      "sUrl": "js/Spanish.lang"
+    },
+    responsive:true,
+    "processing": true,
+    "dom":"<'row w3-tiny'<'col-sm-8'<'#tableTitle'>><'col-sm-1'<'#tableHeader'>><'col-sm-3'f>><'row'<'col-sm-12'tr>><'row w3-tiny'<'col-sm-5'i><'col-sm-7'p>>",
+    "serverSide": true,
+    "ajax": {
+     "type": "POST",
+     "url": "RestProv/lista",
+     "data": function ( d ) {
+       d.estado = 1;
+     }
+   },
+   "columns": [
+   { "data": "nombre" },
+   { "data": "iddep" },
+   {"data":"iddep"},
+   {"data":"idprov"}
+   ],
+   "createdRow": function ( row, data, index ){
+     if(data.estado==1){
+       btnGroup='';
+       btnGroup+='<button class="btn btn-xs btn-primary modificar"  data-toggle="tooltip" data-placement="top" title="Modificar" data-id="'+data.idprov+'"><i class="fa fa-edit"></i> | modificar</button>';
+       btnGroup+='<button class="btn btn-xs btn-danger eliminar"  data-toggle="tooltip" data-placement="top" title="Eliminar" data-id="'+data.idprov+'"><i class="glyphicon glyphicon-remove-sign"></i> | eliminar</button>';
+       $('td', row).eq(3).html('<div class="btn-group">'+btnGroup+'</div>');
+       $.post('RestDpto/obtener?id='+data.iddep, function(result){
+         $('td', row).eq(1).html(result.data.nombre);
+       })
+       $.post('RestProv/obtenerpais?id='+data.iddep, function(result){
+         $('td', row).eq(2).html(result.data.nombre);
+       })
+     }
+   },
+   "drawCallback": function( settings ) {	
+    $('#tableTitle').html('<h6><b>Provincias</b></h6>');
+    $('#tableHeader').html('<button class="btn btn-xs btn-primary" id="btnAdicionar"><i class="fa fa-plus-circle"></i> | adicionar</button>');
+    $('#btnAdicionar').click(function(){
+      $('#formulario').data('formValidation').resetForm();
+      $('#formulario')[0].reset();
+       $.post('RestPaises/listar', function(result) {//$(this).data('id') es el atributo del boton data-id; q
+        if(result.status){
+         $('#modalAdicionar').modal('show');
+         var cad="";
+         for(var i=0;i<result.data.length;i++){
+          cad=cad+'<option value='+result.data[i].idpais+'>'+result.data[i].nombre+'</option>';
+        }
+        $('#idpaises').html(cad);
+           //$('#formularioModificar').loadJSON(result.data);
+         }
+       }, 'json');
+       $.post('RestDpto/listaridDep?idpais=2', function(result) {//$(this).data('id') es el atributo del boton data-id; q
+        if(result.status){
+         var cad="";
+         for(var i=0;i<result.data.length;i++){
+          cad=cad+'<option value='+result.data[i].iddep+'>'+result.data[i].nombre+'</option>';
+        }
+        $('#iddep').html(cad);
+           //$('#formularioModificar').loadJSON(result.data);
+         }
+       }, 'json');
+     });
+    $('#idpaises').change(function(){
+      $.post('RestDpto/listaridDep?idpais='+$( '#idpaises option:selected').val(), function(result) {//$(this).data('id') es el atributo del boton data-id; q
+        if(result.status){
+         var cad="";
+         for(var i=0;i<result.data.length;i++){
+          cad=cad+'<option value='+result.data[i].iddep+'>'+result.data[i].nombre+'</option>';
+        }
+        $('#iddep').html(cad);
+           //$('#formularioModificar').loadJSON(result.data);
+         }
+       }, 'json');
+    })
+
+    $('#idpaises1').change(function(){
+      $.post('RestDpto/listaridDep?idpais='+$( '#idpaises1 option:selected').val(), function(result) {//$(this).data('id') es el atributo del boton data-id; q
+        if(result.status){
+         var cad="";
+         for(var i=0;i<result.data.length;i++){
+          cad=cad+'<option value='+result.data[i].iddep+'>'+result.data[i].nombre+'</option>';
+        }
+        $('#iddep1').html(cad);
+           //$('#formularioModificar').loadJSON(result.data);
+         }
+       }, 'json');
+    })
+
+    var iddepc;
+    var idpaisc;
+    $('.modificar').click(function(){ 
+     $('#formularioModificar').data('formValidation').resetForm();
+     $('#formularioModificar')[0].reset();
+      $.post('RestProv/obtener?id='+$(this).data('id'), function(result) {//$(this).data('id') es el atributo del boton data-id; q tien
+        if(result.status){
+         $('#modalModificar').modal('show');
+         $('#formularioModificar').loadJSON(result.data);
+         iddepc=result.data.iddep;
+         console.log(iddepc)
+         console.log(result.data.iddep)
+       }
+       $.post('RestProv/obtenerpais?id='+result.data.iddep, function(result1){
+         idpaisc=result1.data.idpais;
+         $.post('RestDpto/listaridDep?idpais='+result1.data.idpais, function(result2) {//$(this).data('id') es el atributo del boton data-id; q
+          if(result2.status){
+           var cad="";
+           for(var i=0;i<result2.data.length;i++){
+            if(iddepc==result2.data[i].iddep){
+              cad=cad+'<option value="'+result2.data[i].iddep+'" selected"true">'+result2.data[i].nombre+'</option>';
+              console.log(cad)
+            }
+            else{
+             cad=cad+'<option value="'+result2.data[i].iddep+'" >'+result2.data[i].nombre+'</option>';
+           }
+         }
+         $('#iddep1').html(cad);
+           //$('#formularioModificar').loadJSON(result.data);
+         }
+
+
+       }, 'json');
+
+         $.post('RestPaises/listar', function(result3) {//$(this).data('id') es el atributo del boton data-id; q
+          if(result3.status){
+           var cad="";
+           for(var i=0;i<result3.data.length;i++){
+            if(result1.data.idpais==result3.data[i].idpais){
+              cad=cad+'<option value="'+result3.data[i].idpais+'" selected="true">'+result3.data[i].nombre+'</option>';
+              console.log(cad)
+            }
+            else{
+             cad=cad+'<option value="'+result3.data[i].idpais+'" >'+result3.data[i].nombre+'</option>';
+           }
+         }
+         $('#idpaises1').html(cad);
+           //$('#formularioModificar').loadJSON(result.data);
+         }
+       }, 'json');
+       });
+
+       
+     }) 
+    });
+    $('.eliminar').click(function(){ 
+     $('#formularioEliminar').data('formValidation').resetForm();
+     $('#formularioEliminar')[0].reset();
+     $.post('RestProv/obtener?id='+$(this).data('id'), function(result) {
+       if(result.status){
+        $('#modalEliminar').modal('show');
+        $('#formularioEliminar').loadJSON(result.data);
+        $('#tipoLabel').html(result.data.nombre);
+      }
+    }, 'json');
+   });
+
+    $('button[data-toggle="tooltip"]').tooltip({animated: 'fade',placement: 'bottom',});
+
+  }
+} );
+
+$('.estado').click(function(){
+ $('#example').dataTable().fnDraw('page');
+});
+
+$('#formulario,#formularioModificar,#formularioEliminar').formValidation(
+  {locale: 'es_ES'}).on('success.form.fv', function(e) {
+                            e.preventDefault();// para dejar la pantalla en la posicion que se encuentra 
+                            var $form = $(e.target);
+                            $.post($form.attr('action'), $form.serialize(), function(result) {
+                            	if(result.status){
+                               $form.data('formValidation').resetForm();
+                               $('#formulario')[0].reset();
+                               $('#formularioModificar')[0].reset();
+                               $('#formularioEliminar')[0].reset();
+                               $('#example').dataTable().fnDraw('page');
+                    	        //	mostrarMensaje('info','Se realizo con exito la Transaccion');
+
+                           }
+                           $('.modal').modal('hide');
+                         }, 'json');
+                          });
+});
+</script>
